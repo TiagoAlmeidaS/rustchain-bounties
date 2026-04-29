@@ -100,6 +100,31 @@ Once verified, RTC is sent to your wallet. First time? We will help you set one 
 
 ---
 
+## Dockerized Miner - Quick Start
+
+Run the RustChain miner with one command using Docker:
+
+```bash
+docker run -e WALLET=my-wallet ghcr.io/scottcjn/rustchain-miner
+```
+
+### Using Docker Compose
+
+```bash
+WALLET=my-wallet docker-compose up -d
+```
+
+### Configuration
+
+| Variable | Description | Default |
+|----------|-------------|---------|
+| WALLET | Your RTC wallet name | (required) |
+| NODE_URL | RustChain node URL | https://node.rustchain.io |
+
+See [docker-compose.yml](docker-compose.yml) for full setup.
+
+---
+
 ### Part of the Elyan Labs Ecosystem
 
 - [RustChain](https://rustchain.org) — Proof-of-Antiquity blockchain with hardware attestation

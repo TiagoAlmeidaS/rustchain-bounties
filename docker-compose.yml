@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  rustchain-miner:
+    build: .
+    image: ghcr.io/scottcjn/rustchain-miner:latest
+    container_name: rustchain-miner
+    environment:
+      - WALLET=${WALLET:-}
+      - NODE_URL=${NODE_URL:-https://node.rustchain.io}
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "ps", "aux"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
